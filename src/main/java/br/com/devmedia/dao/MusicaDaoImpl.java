@@ -22,11 +22,11 @@ public class MusicaDaoImpl implements MusicaDao{
 	}
 
 	@Override
-	public List<Musica> recuperarPorPlaylist(long playlistId) {
-		// TODO Auto-generated method stub
-		return em.createQuery("select m from Musica m where m.playlist.id = :playlistId",Musica.class)
-				.setParameter("playlistId", playlistId).getResultList();
-	}
+    public List<Musica> recuperarPorPlaylist(long playlistId) {
+        return em.createQuery("select m from Musica m where m.playlist.id = :playlistId", Musica.class)
+                .setParameter("playlistId", playlistId)
+                .getResultList();
+    }
 
 	@Override
 	public Musica recuperarPorPlaylistIdEMusicaId(long playlistId, long musicaId) {
