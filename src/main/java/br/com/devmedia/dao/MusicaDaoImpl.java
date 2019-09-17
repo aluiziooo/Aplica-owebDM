@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -12,8 +13,10 @@ import br.com.devmedia.domain.Musica;
 
 @Service
 public class MusicaDaoImpl implements MusicaDao{
-
+	
+	@Autowired
 	private EntityManager em;
+	
 	@Override
 	public void salvar(Musica musica) {
 		// TODO Auto-generated method stub
